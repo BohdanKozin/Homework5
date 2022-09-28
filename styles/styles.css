@@ -214,11 +214,12 @@ address {
 
 /* <!-- hero --> */
 .hero-wraper {
-    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-fon.jpg);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-fon2.jpg);
     background-color: rgba(47, 48, 58, 0.4);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     max-width: 1600px;
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -278,14 +279,26 @@ address {
     right: 0;
     width: 100%;
     height: 100%;
-
+z-index: 1;
     background-color: rgba(0, 0, 0, 0.2);
 
-    transform: scale(1.25);
-    transition-duration: 1000ms;
+    animation: animate150 1000ms infinite 1000ms;
 }
-
+@keyframes animate150 {
+    0% {
+      transform: scale(1);
+    }
   
+    50% {
+      transform: scale(1.5);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+
+.modal-fon:focus, .modal-fon:hover{ animation-play-state:paused  }
 
 
 .modal-fon.is-hidden {
@@ -766,8 +779,6 @@ background-repeat: no-repeat;
     border-bottom: 1px solid #EEEEEE;
 }
 
-
-
 .title-galety {
     position: absolute;
     white-space: nowrap;
@@ -786,7 +797,6 @@ background-repeat: no-repeat;
 }
 
 .bnt-portfolio {
-
     padding: 6px 22px 6px 22px;
     background: #F5F4FA;
     border-radius: 4px;
@@ -834,16 +844,19 @@ background-repeat: no-repeat;
 .list-portfolio-icon:hover .text-opaciti,
 .list-portfolio-icon:focus .text-opaciti {
     opacity: 1;
-    transform: translate(0% ,-100%);
+    transform: translateY(0%);
     transition-duration: 1000ms
 }
 
 
+
 .text-opaciti {
     position: absolute;
-    bottom: -184px;
+    top: 0;
     left: 0;
+    transform: translateY(100%);
     opacity: 0;
+    display: block;
     width: 100%;
     height: 294px;
     overflow: hidden;
