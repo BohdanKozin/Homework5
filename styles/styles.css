@@ -1,6 +1,9 @@
 ﻿/* :root{  --pri-text-color: #212121 } 
 .main{ background-color: var(--pri-text-color)} */
 
+/* 
+transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1); */
+
 :root {
     --primary-text-color: #212121;
     --focus-text-color: #2196F3;
@@ -125,6 +128,9 @@ address {
     line-height: 1.14;
 }
 
+
+.nav-knopky.activ.corrent{color: var(--focus-text-color);}
+
 .link.element {
     position: relative;
     display: inline-block;
@@ -142,6 +148,11 @@ address {
     border: 1px solid var(--focus-text-color);
     border-radius: 4px;
     background-color: var(--focus-text-color);
+    transition-duration:250ms;
+    transition-property: opacity;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+
+
 }
 
 .nav-knopky:hover,
@@ -153,6 +164,7 @@ address {
 .nav-knopky:focus::after {
     color: var(--focus-text-color);
     opacity: 1;
+    
 }
 
 .kontakt-list {
@@ -279,34 +291,22 @@ address {
     right: 0;
     width: 100%;
     height: 100%;
-z-index: 1;
+    z-index: 1;
     background-color: rgba(0, 0, 0, 0.2);
-
-    animation: animate150 1000ms infinite 1000ms;
+    transform: scale(1);
+    transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-@keyframes animate150 {
-    0% {
-      transform: scale(1);
-    }
-  
-    50% {
-      transform: scale(1.5);
-    }
-  
-    100% {
-      transform: scale(1);
-    }
-  }
-
-.modal-fon:focus, .modal-fon:hover{ animation-play-state:paused  }
 
 
-.modal-fon.is-hidden {
+.modal-fon.is-hidden { 
     opacity: 0;
     pointer-events: none;
+    transform: scale(0.1);
 }
 
-.modal-content {
+
+
+.modal-content {opacity: 1;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -315,7 +315,10 @@ z-index: 1;
     height: 581px;
     border-radius: 4px;
     background-color: var(--other-text-color);
+    transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1) 500ms ;
 }
+
+
 
 
 .wraper-icon-close {
@@ -541,6 +544,8 @@ background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
     color: #AFB1B8;
+    transition-property:color background-color;
+    transition-duration: 250ms;
 }
 
 
@@ -587,6 +592,8 @@ background-repeat: no-repeat;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     color: #AFB1B8;
+    transition-property:color border-color;
+    transition-duration: 250ms;
 }
 
 .icon-clients {
@@ -690,6 +697,8 @@ background-repeat: no-repeat;
     height: 44px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
+    transition-property: background-color;
+    transition-duration: 250ms;
 }
 
 .list-Our-team:hover,
@@ -806,7 +815,11 @@ background-repeat: no-repeat;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.6;
-    color: var(--primary-text-color)
+    color: var(--primary-text-color);
+    transition-property:color background-color;
+    transition-duration: 250ms;
+
+    
 }
 
 .bnt-link :hover,
@@ -845,17 +858,18 @@ background-repeat: no-repeat;
 .list-portfolio-icon:focus .text-opaciti {
     opacity: 1;
     transform: translateY(0%);
-    transition-duration: 1000ms
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
-
+.foto-opaciti{position: relative;
+overflow: hidden;}
 
 .text-opaciti {
     position: absolute;
     top: 0;
     left: 0;
     transform: translateY(100%);
-    opacity: 0;
     display: block;
     width: 100%;
     height: 294px;
