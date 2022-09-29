@@ -205,6 +205,7 @@ address {
     color: var(--advantage-text-color);
     padding-top: 32px;
     padding-bottom: 32px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -293,20 +294,17 @@ address {
     height: 100%;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.2);
-    transform: scale(1);
-    transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
 .modal-fon.is-hidden { 
     opacity: 0;
     pointer-events: none;
-    transform: scale(0.1);
 }
 
 
-
-.modal-content {opacity: 1;
+.modal-content {opacity:1;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -315,7 +313,7 @@ address {
     height: 581px;
     border-radius: 4px;
     background-color: var(--other-text-color);
-    transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1) 500ms ;
+    transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1) 1000ms ;
 }
 
 
@@ -543,9 +541,10 @@ background-repeat: no-repeat;
     height: 44px;
     justify-content: center;
     align-items: center;
+    border-radius: 50% ;
     color: #AFB1B8;
-    transition-property:color background-color;
-    transition-duration: 250ms;
+    transition: background-color 250ms , color 250ms ;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -592,8 +591,8 @@ background-repeat: no-repeat;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     color: #AFB1B8;
-    transition-property:color border-color;
     transition-duration: 250ms;
+    
 }
 
 .icon-clients {
@@ -689,7 +688,7 @@ background-repeat: no-repeat;
     margin-right: 10px;
 }
 
-.list-Our-team {
+.list-Our-team-f {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -701,8 +700,8 @@ background-repeat: no-repeat;
     transition-duration: 250ms;
 }
 
-.list-Our-team:hover,
-.list-Our-team:focus {
+.list-Our-team-f:hover,
+.list-Our-team-f:focus {
     background-color: var(--focus-text-color);
 }
 
