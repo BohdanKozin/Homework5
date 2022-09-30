@@ -126,6 +126,7 @@ address {
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -148,9 +149,8 @@ address {
     border: 1px solid var(--focus-text-color);
     border-radius: 4px;
     background-color: var(--focus-text-color);
-    transition-duration:250ms;
-    transition-property: opacity;
-    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+    transition:opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 
 
 }
@@ -231,7 +231,6 @@ address {
     background-color: rgba(47, 48, 58, 0.4);
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    max-width: 1600px;
     height: 600px;
     display: flex;
     justify-content: center;
@@ -294,7 +293,8 @@ address {
     height: 100%;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.2);
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 450ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 
@@ -313,7 +313,7 @@ address {
     height: 581px;
     border-radius: 4px;
     background-color: var(--other-text-color);
-    transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1) 1000ms ;
+
 }
 
 
@@ -543,8 +543,8 @@ background-repeat: no-repeat;
     align-items: center;
     border-radius: 50% ;
     color: #AFB1B8;
-    transition: background-color 250ms , color 250ms ;
-    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 
@@ -591,7 +591,7 @@ background-repeat: no-repeat;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     color: #AFB1B8;
-    transition-duration: 250ms;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
@@ -696,8 +696,8 @@ background-repeat: no-repeat;
     height: 44px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
-    transition-property: background-color;
-    transition-duration: 250ms;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   
 }
 
 .list-Our-team-f:hover,
@@ -815,8 +815,8 @@ background-repeat: no-repeat;
     font-size: 16px;
     line-height: 1.6;
     color: var(--primary-text-color);
-    transition-property:color background-color;
-    transition-duration: 250ms;
+    transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1),  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ 
 
     
 }
@@ -853,13 +853,14 @@ background-repeat: no-repeat;
     color: var(--focus-text-color);
 }
 
-.list-portfolio-icon:hover .text-opaciti,
-.list-portfolio-icon:focus .text-opaciti {
-    opacity: 1;
+.link-portfolio:hover .text-opaciti,
+.link-portfolio:focus .text-opaciti {
     transform: translateY(0%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
+
+
+
 
 .foto-opaciti{position: relative;
 overflow: hidden;}
